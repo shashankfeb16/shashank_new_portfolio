@@ -68,11 +68,6 @@ const skills = [
 		cssName: "git"
 	},
 	{
-		name: 'GitHub',
-		icon: <AiFillGithub size="25px" color="white"/>,
-		cssName: "git-hub"
-	},
-	{
 		name: 'java',
 		icon: <BiLogoJava size="25px" color="white"/>,
 		cssName: "java"
@@ -92,18 +87,16 @@ const skills = [
 const projects = [
 	{
 		name: 'Global Share',
-		// TODO : 
-		link: '',
-		github: '',
-		description: '',
+		link: 'https://ibrahimhiarea.github.io/Global-Share/#/home',
+		github: 'https://github.com/IbrahimHiarea/Global-Share',
+		description: 'The Global Share ERP System is an innovative web-based application designed to streamline volunteer recruitment, management, and reward systems. It incorporates task management, recruitment, and gamification features to enhance employee engagement, promote effective communication, and drive organizational excellence.',
 		image: GlobalShare
 	},
 	{
 		name: `Ata'a`,
-		// TODO : 
-		link: '',
-		github: '',
-		description: '',
+		link: 'https://ibrahimhiarea.github.io/Ataa-Dashboard/',
+		github: 'https://github.com/IbrahimHiarea/Ataa-Dashboard',
+		description: "Ataa is a web application built with React for managing and organizing the operations of a charity organization. The application includes a landing page that provides an overview of the charity's mission and goals. Staff members of the charity can log in to the main dashboard, which allows them to manage and control the projects, employees, and beneficiaries associated with the charity. Additionally, there is a section dedicated to viewing the total budget of the charity, as well as the budget allocated to each individual project.",
 		image: Ataa
 	},
 	{
@@ -241,7 +234,7 @@ function App() {
 							<h3>Get to know me!</h3>
 							<p>
 								I'm a <span>Frontend Web Developer</span> building the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the <span>Projects</span> section. <br/> <br/>
-								I also like sharing content related to the stuff that I have learned over the years in <span>Web Development</span> so it can help other people of the Dev Community. Feel free to Connect or Follow me on my <a href="https://www.linkedin.com/in/ibrahim-hiarea/" target="_blank">Linkedin</a> where I post useful content related to Web Development and Programming. <br/> <br/>
+								I also like sharing content related to the stuff that I have learned over the years in <span>Web Development</span> so it can help other people of the Dev Community. Feel free to Connect or Follow me on my <a href="https://github.com/IbrahimHiarea" target="_blank">Github</a> where I post useful content related to Web Development and Programming. <br/> <br/>
 								I'm open to <span>Job</span> opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to <span>contact</span> me.
 							</p>
 						</div>
