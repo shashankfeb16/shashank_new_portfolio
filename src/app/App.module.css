@@ -621,6 +621,10 @@
     background-color: #009688;
 }
 
+.type-script:hover::after{
+    background-color: var(--type-script-color);
+}
+
 @media (max-width: 768px){
     .about-content{
         grid-template-columns: 1fr;

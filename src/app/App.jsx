@@ -18,6 +18,7 @@ import { BsFacebook , BsGit , BsPuzzle } from "react-icons/bs";
 import { TbBrandCpp } from "react-icons/tb";
 import { FaMobileAlt } from "react-icons/fa";
 import { RiSendPlaneFill } from "react-icons/ri";
+import { SiTypescript } from "react-icons/si";
 
 //import images
 import  Ataa  from '../assets/images/Ataa.png';
@@ -46,6 +47,11 @@ const skills = [
 		name: 'Java Script',
 		icon: <BiLogoJavascript size="25px" color="white"/>,
 		cssName: "java-script"
+	},
+	{
+		name: "TypeScript",
+		icon: <SiTypescript size="25px" color="white"/>,
+		cssName: "type-script"
 	},
 	{
 		name: 'React',
@@ -81,7 +87,7 @@ const skills = [
 		name: 'Problem Solving',
 		icon: <BsPuzzle size="25px" color="white"/>,
 		cssName: "problem-solving"
-	},
+	}
 ];
 
 const projects = [
