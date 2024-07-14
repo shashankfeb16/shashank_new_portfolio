@@ -1,4 +1,4 @@
-import React , { useState ,  useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 // import components
@@ -12,21 +12,21 @@ import cv from '../assets/files/cv.pdf';
 
 // import icons
 import { FaReact } from "react-icons/fa";
-import { AiFillGithub , AiFillLinkedin , AiFillHtml5 , AiOutlineEye } from "react-icons/ai";
-import { BiLogoGmail , BiLogoCss3 , BiLogoJavascript , BiLogoRedux , BiLogoJava } from "react-icons/bi";
-import { BsFacebook , BsGit , BsPuzzle } from "react-icons/bs";
+import { AiFillGithub, AiFillLinkedin, AiFillHtml5, AiOutlineEye } from "react-icons/ai";
+import { BiLogoGmail, BiLogoCss3, BiLogoJavascript, BiLogoRedux, BiLogoJava } from "react-icons/bi";
+import { BsFacebook, BsGit, BsPuzzle } from "react-icons/bs";
 import { TbBrandCpp } from "react-icons/tb";
 import { FaMobileAlt } from "react-icons/fa";
 import { RiSendPlaneFill } from "react-icons/ri";
-import { SiTypescript } from "react-icons/si";
+import { SiTypescript, SiRecoil, SiReactquery } from "react-icons/si";
 
 //import images
-import  Ataa  from '../assets/images/Ataa.png';
-import  Elzero  from '../assets/images/Elzero.png';
-import  Kasper  from '../assets/images/Kasper.png';
-import  Leon  from '../assets/images/Leon.png';
-import  SokoNumber  from '../assets/images/SokoNumber.png';
-import  GlobalShare from '../assets/images/GlobalShare.png';
+import Ataa from '../assets/images/Ataa.png';
+import Elzero from '../assets/images/Elzero.png';
+import Kasper from '../assets/images/Kasper.png';
+import Leon from '../assets/images/Leon.png';
+import SokoNumber from '../assets/images/SokoNumber.png';
+import GlobalShare from '../assets/images/GlobalShare.png';
 
 // import style
 import style from './App.module.css';
@@ -35,57 +35,72 @@ import clsx from 'clsx';
 const skills = [
 	{
 		name: 'HTML 5',
-		icon: <AiFillHtml5 size="25px" color="white"/>,
+		icon: <AiFillHtml5 size="25px" color="white" />,
 		cssName: "html"
 	},
 	{
 		name: 'CSS 3',
-		icon: <BiLogoCss3 size="25px" color="white"/>,
+		icon: <BiLogoCss3 size="25px" color="white" />,
 		cssName: "css"
 	},
 	{
 		name: 'Java Script',
-		icon: <BiLogoJavascript size="25px" color="white"/>,
+		icon: <BiLogoJavascript size="25px" color="white" />,
 		cssName: "java-script"
 	},
 	{
 		name: "TypeScript",
-		icon: <SiTypescript size="25px" color="white"/>,
+		icon: <SiTypescript size="25px" color="white" />,
 		cssName: "type-script"
 	},
 	{
 		name: 'React',
-		icon: <FaReact size="25px" color="white"/>,
+		icon: <FaReact size="25px" color="white" />,
 		cssName: "react"
 	},
 	{
 		name: 'Redux ToolKit',
-		icon: <BiLogoRedux size="25px" color="white"/>,
+		icon: <BiLogoRedux size="25px" color="white" />,
+		cssName: "redux"
+	},
+	{
+		name: 'Redux Recoil',
+		icon: <SiRecoil size="25px" color="white" />,
+		cssName: "recoil"
+	},
+	{
+		name: 'React Query',
+		icon: <SiReactquery size="25px" color="white" />,
+		cssName: "react-query"
+	},
+	{
+		name: 'RTK Query',
+		icon: <BiLogoRedux size="25px" color="white" />,
 		cssName: "redux"
 	},
 	{
 		name: 'Responsive Design',
-		icon: <FaMobileAlt size="25px" color="white"/>,
+		icon: <FaMobileAlt size="25px" color="white" />,
 		cssName: "responsive"
 	},
 	{
 		name: 'Git',
-		icon: <BsGit size="25px" color="white"/>,
+		icon: <BsGit size="25px" color="white" />,
 		cssName: "git"
 	},
 	{
 		name: 'java',
-		icon: <BiLogoJava size="25px" color="white"/>,
+		icon: <BiLogoJava size="25px" color="white" />,
 		cssName: "java"
 	},
 	{
 		name: 'C++',
-		icon: <TbBrandCpp size="25px" color="white"/>,
+		icon: <TbBrandCpp size="25px" color="white" />,
 		cssName: "cpp"
 	},
 	{
 		name: 'Problem Solving',
-		icon: <BsPuzzle size="25px" color="white"/>,
+		icon: <BsPuzzle size="25px" color="white" />,
 		cssName: "problem-solving"
 	}
 ];
@@ -138,31 +153,31 @@ const projects = [
 function App() {
 	const form = useRef();
 
-	const [menu , setMenu] = useState(false);
-	const [loading , setLoading] = useState(false);
+	const [menu, setMenu] = useState(false);
+	const [loading, setLoading] = useState(false);
 
 	const sendEmail = (e) => {
 		e.preventDefault();
 		setLoading(true);
-	
-		setTimeout(function() {
+
+		setTimeout(function () {
 			emailjs.sendForm('service_gjbmeus', 'template_qk6p0pa', form.current, 'HDMwz57k3xrihLg4J')
-			.then((result) => {
-				e.target.name.value = '';
-				e.target.email.value = '';
-				e.target.message.value = '';
-			});
+				.then((result) => {
+					e.target.name.value = '';
+					e.target.email.value = '';
+					e.target.message.value = '';
+				});
 			setLoading(false);
 		}, 2000);
 
-	  };
+	};
 
-  	return (
+	return (
 		<div className={style.app}>
 			{/* Navbar */}
 			<div className={style.nav}>
 				<a className={style.logo}>
-					<FaReact color='var(--primary-main)' size='50px'/>
+					<FaReact color='var(--primary-main)' size='50px' />
 					<h5>ibrahim hiarea</h5>
 				</a>
 				<ul>
@@ -172,8 +187,8 @@ function App() {
 					<li><a href="#Contact">Contact</a></li>
 				</ul>
 				<div className={style["menu-icon"]}>
-					<input id='checkbox' className={style["checkbox2"]} type="checkbox"/>
-					<label className={`${style.toggle} ${style.toggle2}`} for="checkbox"  onClick={() => setMenu(!menu)}>
+					<input id='checkbox' className={style["checkbox2"]} type="checkbox" />
+					<label className={`${style.toggle} ${style.toggle2}`} for="checkbox" onClick={() => setMenu(!menu)}>
 						<div className={`${style.bars} ${style.bar4}`}></div>
 						<div className={`${style.bars} ${style.bar5}`}></div>
 						<div className={`${style.bars} ${style.bar6}`}></div>
@@ -181,7 +196,7 @@ function App() {
 				</div>
 			</div>
 			{
-				menu === true  &&  
+				menu === true &&
 				<ul className={style.menu}>
 					<li><a href="#Home">Home</a></li>
 					<li><a href="#About">About</a></li>
@@ -189,7 +204,7 @@ function App() {
 					<li><a href="#Contact">Contact</a></li>
 				</ul>
 			}
-			
+
 			{/* Home */}
 			<div id='Home' className={style.home}>
 				<div className={style["home-content"]}>
@@ -207,7 +222,7 @@ function App() {
 					</a>
 				</div>
 				<div className={style["scroll-icon"]}>
-					<div className={style["scroll-down"]} style={{color: "skyblue !important"}}>
+					<div className={style["scroll-down"]} style={{ color: "skyblue !important" }}>
 						<div className={style.chevrons}>
 							<div className={style["chevron-down"]}></div>
 							<div className={style["chevron-down"]}></div>
@@ -216,16 +231,16 @@ function App() {
 				</div>
 				<div className={style["contact-nav"]}>
 					<a className={style.github} target="_blank" href='https://github.com/IbrahimHiarea' >
-						<AiFillGithub size="30px" color='black'/>
+						<AiFillGithub size="30px" color='black' />
 					</a>
-					<a className={style.linkedin} target="_blank" href='https://www.linkedin.com/in/ibrahim-hiarea/' > 
-						<AiFillLinkedin size="30px" color='black'/>
+					<a className={style.linkedin} target="_blank" href='https://www.linkedin.com/in/ibrahim-hiarea/' >
+						<AiFillLinkedin size="30px" color='black' />
 					</a>
 					<a className={style.gmail} target="_blank" href="mailto:ibrahimhiarea2@gmail.com?subject=SendMail&body=Description" >
-						<BiLogoGmail size="30px" color='black'/>
+						<BiLogoGmail size="30px" color='black' />
 					</a>
 					<a className={style.facebook} target="_blank" href='https://www.facebook.com/ibrahim.hiarea' >
-						<BsFacebook size="30px" color='black'/>
+						<BsFacebook size="30px" color='black' />
 					</a>
 				</div>
 			</div>
@@ -239,8 +254,8 @@ function App() {
 						<div className={style["about-info"]}>
 							<h3>Get to know me!</h3>
 							<p>
-								I'm a <span>Frontend Web Developer</span> building the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the <span>Projects</span> section. <br/> <br/>
-								I also like sharing content related to the stuff that I have learned over the years in <span>Web Development</span> so it can help other people of the Dev Community. Feel free to Connect or Follow me on my <a href="https://github.com/IbrahimHiarea" target="_blank">Github</a> where I post useful content related to Web Development and Programming. <br/> <br/>
+								I'm a <span>Frontend Web Developer</span> building the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the <span>Projects</span> section. <br /> <br />
+								I also like sharing content related to the stuff that I have learned over the years in <span>Web Development</span> so it can help other people of the Dev Community. Feel free to Connect or Follow me on my <a href="https://github.com/IbrahimHiarea" target="_blank">Github</a> where I post useful content related to Web Development and Programming. <br /> <br />
 								I'm open to <span>Job</span> opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to <span>contact</span> me.
 							</p>
 						</div>
@@ -248,7 +263,7 @@ function App() {
 							<h3>My Skills</h3>
 							<div className={style.skills}>
 								{
-									skills.map((skill,index) => {
+									skills.map((skill, index) => {
 										return <div key={`skill${index}`} className={`${style.skill} ${style[skill.cssName]}`}>
 											<div className={style["skill-name"]}>{skill.name}</div>
 											<div className={style["skill-icon"]}>{skill.icon}</div>
@@ -268,7 +283,7 @@ function App() {
 					<p>Here you will find some of the personal and clients projects that I created with each project containing its own case study</p>
 					<div className={style["projects-list"]}>
 						{
-							projects.map((project,index) => {
+							projects.map((project, index) => {
 								return <div key={`project${index}`} className={style.project}>
 									<div className={style["project-image"]}>
 										<img src={project.image} alt="Project Image" />
@@ -283,7 +298,7 @@ function App() {
 												backgroundColor="var(--primary-main)"
 												color="white"
 												link={project.link}
-												icon={<AiOutlineEye size="25px" color='white'/>}
+												icon={<AiOutlineEye size="25px" color='white' />}
 											>
 												Live Demo
 											</IconButton>
@@ -293,7 +308,7 @@ function App() {
 												backgroundColor="black"
 												color="white"
 												link={project.github}
-												icon={<AiFillGithub size="25px" color='white'/>}
+												icon={<AiFillGithub size="25px" color='white' />}
 											>
 												Github
 											</IconButton>
@@ -302,7 +317,7 @@ function App() {
 								</div>
 							})
 						}
-						
+
 					</div>
 				</div>
 			</div>
@@ -312,13 +327,13 @@ function App() {
 				<div className={style.container}>
 					<h2 className={style.title}>Contact</h2>
 					<p>Feel free to Contact me by submitting the form below and I will get back to you as soon as possible</p>
-					<form 
-						ref={form} onSubmit={sendEmail} 
+					<form
+						ref={form} onSubmit={sendEmail}
 						className={
 							clsx(
-								{[style['inactive-form']] : loading}
+								{ [style['inactive-form']]: loading }
 							)}
-						>
+					>
 						<InputField
 							width="700px"
 							height="40px"
@@ -344,7 +359,7 @@ function App() {
 							type="text"
 						/>
 						<SubmitButton
-							icon={<RiSendPlaneFill size="20px" color='white'/>}
+							icon={<RiSendPlaneFill size="20px" color='white' />}
 							width="200px"
 							height="60px"
 							color="white"
@@ -353,15 +368,15 @@ function App() {
 							Submit
 						</SubmitButton>
 						{
-							loading  &&
+							loading &&
 							<div className={style.loader}>
-								<Loader/>
+								<Loader />
 							</div>
 						}
 					</form>
 				</div>
 			</div>
-			
+
 			{/* footer */}
 			<div className={style.footer}>
 				<div className={style.container}>
@@ -374,16 +389,16 @@ function App() {
 							<h3>Social</h3>
 							<div className="">
 								<a className={style.git} target="_blank" href='https://github.com/IbrahimHiarea' >
-									<AiFillGithub size="30px" color='white'/>
+									<AiFillGithub size="30px" color='white' />
 								</a>
-								<a className={style.linkedin} target="_blank" href='https://www.linkedin.com/in/ibrahim-hiarea/' > 
-									<AiFillLinkedin size="30px" color='white'/>
+								<a className={style.linkedin} target="_blank" href='https://www.linkedin.com/in/ibrahim-hiarea/' >
+									<AiFillLinkedin size="30px" color='white' />
 								</a>
 								<a className={style.gmail} target="_blank" href="mailto:ibrahimhiarea2@gmail.com?subject=SendMail&body=Description" >
-									<BiLogoGmail size="30px" color='white'/>
+									<BiLogoGmail size="30px" color='white' />
 								</a>
 								<a className={style.facebook} target="_blank" href='https://www.facebook.com/ibrahim.hiarea' >
-									<BsFacebook size="30px" color='white'/>
+									<BsFacebook size="30px" color='white' />
 								</a>
 							</div>
 						</div>
@@ -394,7 +409,7 @@ function App() {
 				</div>
 			</div>
 		</div>
-  	);
+	);
 }
 
 export default App;

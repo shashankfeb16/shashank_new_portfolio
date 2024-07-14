@@ -1,15 +1,14 @@
-
-*{
-	-webkit-box-sizing: border-box; 
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
   /* primary */
   --primary-main: #5e07cd;
   --primary-light: #7843e9;
-  --word-color : #333;
+  --word-color: #333;
   --title-color: #111;
   --back-ground-color: #fafafa;
   --paragraph-color: #555;
@@ -28,6 +27,8 @@
   --linked-in-color: #0077b5;
   --gmail-color: #c72923;
   --type-script-color: #007acc;
+  --recoil-color: #3578e5;
+  --react-query-color: #f73f51;
 }
 
 html {
@@ -35,7 +36,7 @@ html {
   /* overflow: hidden; */
 }
 
-body{
+body {
   font-family: 'DM Sans', sans-serif;
 }
 
