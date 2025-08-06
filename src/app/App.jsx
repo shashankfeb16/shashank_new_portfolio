@@ -36,12 +36,8 @@ import { SiExpress } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 
 //import images
-import Ataa from "../assets/images/Ataa.png";
-import Elzero from "../assets/images/Elzero.png";
-import Kasper from "../assets/images/Kasper.png";
-import Leon from "../assets/images/Leon.png";
-import SokoNumber from "../assets/images/SokoNumber.png";
-import GlobalShare from "../assets/images/GlobalShare.png";
+import Hound from "../assets/images/Hound_Image.png";
+import Timely from "../assets/images/Timely_Image.png";
 
 // import style
 import style from "./App.module.css";
@@ -127,52 +123,20 @@ const skills = [
 
 const projects = [
   {
-    name: "Global Share",
-    link: "https://ibrahimhiarea.github.io/Global-Share/#/home",
-    github: "https://github.com/IbrahimHiarea/Global-Share",
+    name: "HOUND Blog Application",
+    link: "https://hound-frontend-service.vercel.app/",
+    github: "https://github.com/shashankfeb16/HOUND_FRONTEND",
     description:
-      "The Global Share ERP System is an innovative web-based application designed to streamline volunteer recruitment, management, and reward systems. It incorporates task management, recruitment, and gamification features to enhance employee engagement, promote effective communication, and drive organizational excellence.",
-    image: GlobalShare,
+      "A full-stack blog platform built with the MERN stack (MongoDB, Express, React, and Node.js). Users can create, edit, and delete blogs, and interact with content by liking and commenting. The platform also features a social aspect, allowing users to follow other authors To provide a rich user experience, I integrated Highcharts to present user-specific analytics. A pie chart visualizes a user's followers and following count, while a monthly bar chart tracks their total likes and comments. This project demonstrates my ability to build a comprehensive, full-stack application with a focus on interactive features and data visualization.",
+    image: Hound,
   },
   {
-    name: `Ata'a`,
-    link: "https://ibrahimhiarea.github.io/Ataa-Dashboard/",
-    github: "https://github.com/IbrahimHiarea/Ataa-Dashboard",
+    name: `Timely Clone`,
+    link: "https://timely-clone.netlify.app/",
+    github: "https://github.com/riyagshah/Timelyapp",
     description:
-      "Ataa is a web application built with React for managing and organizing the operations of a charity organization. The application includes a landing page that provides an overview of the charity's mission and goals. Staff members of the charity can log in to the main dashboard, which allows them to manage and control the projects, employees, and beneficiaries associated with the charity. Additionally, there is a section dedicated to viewing the total budget of the charity, as well as the budget allocated to each individual project.",
-    image: Ataa,
-  },
-  {
-    name: "SoKo Number",
-    link: "https://ibrahimhiarea.github.io/Soko-Number/",
-    github: "https://github.com/IbrahimHiarea/Soko-Number",
-    description:
-      "Soko Number is a puzzle game built with the React framework. The game consists of 6 challenging levels that will test your problem-solving skills. Each level presents a grid-based puzzle where you need to move numbered tiles to their designated positions.",
-    image: SokoNumber,
-  },
-  {
-    name: "Leon",
-    link: "https://ibrahimhiarea.github.io/Leon/",
-    github: "https://github.com/IbrahimHiarea/Leon",
-    description:
-      "Leon is a modern and responsive HTML and CSS design template that provides a sleek and visually appealing foundation for building stunning websites. With its clean and elegant design, Leon focuses on simplicity and exceptional user experience.",
-    image: Leon,
-  },
-  {
-    name: "Kasper",
-    link: "https://ibrahimhiarea.github.io/Kasper/",
-    github: "https://ibrahimhiarea.github.io/Kasper/",
-    description:
-      "Kaspar is a modern and responsive HTML and CSS design template that provides a sleek and visually appealing foundation for building stunning websites. With its clean and elegant design, Kaspar focuses on simplicity and exceptional user experience.",
-    image: Kasper,
-  },
-  {
-    name: "Elzero",
-    link: "https://ibrahimhiarea.github.io/Elzero/",
-    github: "https://github.com/IbrahimHiarea/Elzero",
-    description:
-      "Elzero is a stylish and interactive HTML, CSS, and JavaScript design template that offers a modern and engaging user experience. With its clean code structure and well-designed components, Elzero provides a solid foundation for building dynamic and visually appealing web applications.",
-    image: Elzero,
+      "Timelyapp is centralized automated system that makes it easy for teams to work on all aspects of their programs and projects to ensure efficiency and productivity Timely helps in Log work hours, track project time and create weekly timesheets with automatic time tracking.",
+    image: Timely,
   },
 ];
 
@@ -189,10 +153,10 @@ function App() {
     setTimeout(function () {
       emailjs
         .sendForm(
-          "service_gjbmeus",
-          "template_qk6p0pa",
+          "service_b03dyxp",
+          "template_5gk0kw5",
           form.current,
-          "HDMwz57k3xrihLg4J"
+          "BH4aS8vM7zKyYE1Kn"
         )
         .then((result) => {
           e.target.name.value = "";
