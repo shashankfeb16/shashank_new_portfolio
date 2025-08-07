@@ -38,6 +38,7 @@ import { TbApi } from "react-icons/tb";
 //import images
 import Hound from "../assets/images/Hound_Image.png";
 import Timely from "../assets/images/Timely_Image.png";
+import ProfilePic from "../assets/images/profile.png";
 
 // import style
 import style from "./App.module.css";
@@ -222,6 +223,7 @@ function App() {
       {/* Home */}
       <div id="Home" className={style.home}>
         <div className={style["home-content"]}>
+          <img src={ProfilePic} alt="Profile" className={style.profilePic} />
           <h1>HEY, I'M Shashank Nath</h1>
           <p>
             Highly adaptable Full Stack Developer with 2 years and 9 months of
