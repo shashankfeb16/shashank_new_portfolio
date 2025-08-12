@@ -8,7 +8,7 @@ import InputField from "../common/components/InputField/InputField";
 import TextAreaField from "../common/components/TextAreaField/TextAreaField";
 import SubmitButton from "../common/components/SubmitButton/SubmitButton";
 import Loader from "../common/components/Loader/Loader";
-import cv from "../assets/files/Shashank-Nath-Resume.pdf";
+import cv from "../assets/files/ShashankNath_fw17_0347_.pdf";
 
 // import icons
 import { FaReact } from "react-icons/fa";
