@@ -258,7 +258,7 @@ function App() {
             <a href={cv} target="_blank" rel="noreferrer">
               <DownloadButton>Preview CV</DownloadButton>
             </a>
-            <a href={cv} download="Shashank-Nath-Resume.pdf">
+            <a href={cv} download="Shashank-Nath-resume.pdf">
               <DownloadButton>Download CV</DownloadButton>
             </a>
           </div>
