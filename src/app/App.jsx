@@ -8,6 +8,7 @@ import InputField from "../common/components/InputField/InputField";
 import TextAreaField from "../common/components/TextAreaField/TextAreaField";
 import SubmitButton from "../common/components/SubmitButton/SubmitButton";
 import Loader from "../common/components/Loader/Loader";
+// import cv from "../assets/files/Shashank-Nath-resume.pdf";
 import cv from "../assets/files/Shashank-Nath-resume.pdf";
 
 // import icons
