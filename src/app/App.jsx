@@ -122,27 +122,48 @@ import clsx from "clsx";
 
 const heroSkills = [
   { name: "React", icon: <FaReact size="48px" color="var(--primary-main)" /> },
-  { name: "Redux", icon: <BiLogoRedux size="48px" color="var(--primary-main)" /> },
+  {
+    name: "Redux",
+    icon: <BiLogoRedux size="48px" color="var(--primary-main)" />,
+  },
   {
     name: "JavaScript",
     icon: <BiLogoJavascript size="48px" color="var(--primary-main)" />,
   },
-  { name: "NodeJS", icon: <DiNodejs size="48px" color="var(--primary-main)" /> },
+  {
+    name: "NodeJS",
+    icon: <DiNodejs size="48px" color="var(--primary-main)" />,
+  },
   {
     name: "ExpressJS",
     icon: <SiExpress size="48px" color="var(--primary-main)" />,
   },
-  { name: "Django", icon: <DiDjango size="48px" color="var(--primary-main)" /> },
-  { name: "Material UI", icon: <SiMui size="48px" color="var(--primary-main)" /> },
+  {
+    name: "Django",
+    icon: <DiDjango size="48px" color="var(--primary-main)" />,
+  },
+  {
+    name: "Material UI",
+    icon: <SiMui size="48px" color="var(--primary-main)" />,
+  },
   { name: "Git", icon: <BsGit size="48px" color="var(--primary-main)" /> },
   {
     name: "Bitbucket",
     icon: <FaBitbucket size="48px" color="var(--primary-main)" />,
   },
   { name: "Jira", icon: <FaJira size="48px" color="var(--primary-main)" /> },
-  { name: "REST APIs", icon: <TbApi size="48px" color="var(--primary-main)" /> },
-  { name: "HTML5", icon: <AiFillHtml5 size="48px" color="var(--primary-main)" /> },
-  { name: "CSS3", icon: <BiLogoCss3 size="48px" color="var(--primary-main)" /> },
+  {
+    name: "REST APIs",
+    icon: <TbApi size="48px" color="var(--primary-main)" />,
+  },
+  {
+    name: "HTML5",
+    icon: <AiFillHtml5 size="48px" color="var(--primary-main)" />,
+  },
+  {
+    name: "CSS3",
+    icon: <BiLogoCss3 size="48px" color="var(--primary-main)" />,
+  },
 ];
 
 const projects = [
@@ -259,7 +280,7 @@ function App() {
             <a href={cv} target="_blank" rel="noreferrer">
               <DownloadButton>Preview CV</DownloadButton>
             </a>
-            <a href={cv} download="Shashank-Nath-resume.pdf">
+            <a href={cv} download="Shashank-Nath-Resume.pdf">
               <DownloadButton>Download CV</DownloadButton>
             </a>
           </div>
@@ -322,8 +343,8 @@ function App() {
             <div className={style["about-info"]}>
               <h3>Get to know me!</h3>
               <p>
-                I&apos;m a Highly adaptable Full Stack Developer with 2 years and 9
-                months of experience. I am proficient in end-to-end web
+                I&apos;m a Highly adaptable Full Stack Developer with 2 years
+                and 9 months of experience. I am proficient in end-to-end web
                 application development, unit testing, and issue resolution,
                 consistently delivering efficient and scalable solutions that
                 optimize system functionality and user experience. I have led
@@ -337,7 +358,10 @@ function App() {
               <h3>My Skills</h3>
               <div className={style["skills-hero"]}>
                 {heroSkills.map((skill, index) => (
-                  <div key={`hero-skill-${index}`} className={style["skill-card"]}>
+                  <div
+                    key={`hero-skill-${index}`}
+                    className={style["skill-card"]}
+                  >
                     <div className={style["skill-card-icon"]}>{skill.icon}</div>
                     <div className={style["skill-card-name"]}>{skill.name}</div>
                   </div>
