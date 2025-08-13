@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 // import components
@@ -8,7 +8,7 @@ import InputField from "../common/components/InputField/InputField";
 import TextAreaField from "../common/components/TextAreaField/TextAreaField";
 import SubmitButton from "../common/components/SubmitButton/SubmitButton";
 import Loader from "../common/components/Loader/Loader";
-import cv from "../assets/files/ShashankNath_fw17_0347_.pdf";
+import cv from "../assets/files/Shashank-Nath-resume.pdf";
 
 // import icons
 import { FaReact } from "react-icons/fa";
@@ -23,14 +23,11 @@ import {
   BiLogoCss3,
   BiLogoJavascript,
   BiLogoRedux,
-  BiBarChart,
-  BiLogoJava,
 } from "react-icons/bi";
-import { BsFacebook, BsGit, BsPuzzle } from "react-icons/bs";
+import { BsGit } from "react-icons/bs";
 import { DiNodejs, DiDjango } from "react-icons/di";
 import { SiMui } from "react-icons/si";
-import { TbBrandCpp } from "react-icons/tb";
-import { FaMobileAlt, FaBitbucket, FaJira } from "react-icons/fa";
+import { FaBitbucket, FaJira } from "react-icons/fa";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { SiExpress } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
@@ -44,82 +41,107 @@ import ProfilePic from "../assets/images/profile.png";
 import style from "./App.module.css";
 import clsx from "clsx";
 
-const skills = [
-  {
-    name: "ReactJS",
-    icon: <FaReact size="25px" color="white" />,
-    cssName: "react",
-  },
-  {
-    name: "Redux",
-    icon: <BiLogoRedux size="25px" color="white" />,
-    cssName: "redux",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: <BiLogoCss3 size="25px" color="white" />,
-    cssName: "css",
-  },
-  {
-    name: "HTML",
-    icon: <AiFillHtml5 size="25px" color="white" />,
-    cssName: "html",
-  },
-  {
-    name: "CSS/SASS",
-    icon: <BiLogoCss3 size="25px" color="white" />,
-    cssName: "css",
-  },
+// const skills = [
+//   {
+//     name: "ReactJS",
+//     icon: <FaReact size="25px" color="white" />,
+//     cssName: "react",
+//   },
+//   {
+//     name: "Redux",
+//     icon: <BiLogoRedux size="25px" color="white" />,
+//     cssName: "redux",
+//   },
+//   {
+//     name: "Tailwind CSS",
+//     icon: <BiLogoCss3 size="25px" color="white" />,
+//     cssName: "css",
+//   },
+//   {
+//     name: "HTML",
+//     icon: <AiFillHtml5 size="25px" color="white" />,
+//     cssName: "html",
+//   },
+//   {
+//     name: "CSS/SASS",
+//     icon: <BiLogoCss3 size="25px" color="white" />,
+//     cssName: "css",
+//   },
+//   {
+//     name: "JavaScript",
+//     icon: <BiLogoJavascript size="25px" color="white" />,
+//     cssName: "java-script",
+//   },
+//   {
+//     name: "HighCharts",
+//     icon: <BiBarChart size="25px" color="white" />,
+//     cssName: "java",
+//   },
+//   {
+//     name: "Material UI",
+//     icon: <SiMui size="25px" color="white" />,
+//     cssName: "facebook",
+//   },
+//   {
+//     name: "NodeJS",
+//     icon: <DiNodejs size="25px" color="white" />,
+//     cssName: "java-script",
+//   },
+//   {
+//     name: "ExpressJS",
+//     icon: <SiExpress size="25px" color="white" />,
+//     cssName: "gmail",
+//   },
+//   {
+//     name: "Django",
+//     icon: <DiDjango size="25px" color="white" />,
+//     cssName: "type-script",
+//   },
+//   {
+//     name: "Git",
+//     icon: <BsGit size="25px" color="white" />,
+//     cssName: "git",
+//   },
+//   {
+//     name: "Bitbucket DevOps",
+//     icon: <FaBitbucket size="25px" color="white" />,
+//     cssName: "recoil",
+//   },
+//   {
+//     name: "Jira",
+//     icon: <FaJira size="25px" color="white" />,
+//     cssName: "react-query",
+//   },
+//   {
+//     name: "RESTful APIs",
+//     icon: <TbApi size="25px" color="white" />,
+//     cssName: "react",
+//   },
+// ];
+
+const heroSkills = [
+  { name: "React", icon: <FaReact size="48px" color="var(--primary-main)" /> },
+  { name: "Redux", icon: <BiLogoRedux size="48px" color="var(--primary-main)" /> },
   {
     name: "JavaScript",
-    icon: <BiLogoJavascript size="25px" color="white" />,
-    cssName: "java-script",
+    icon: <BiLogoJavascript size="48px" color="var(--primary-main)" />,
   },
-  {
-    name: "HighCharts",
-    icon: <BiBarChart size="25px" color="white" />,
-    cssName: "java",
-  },
-  {
-    name: "Material UI",
-    icon: <SiMui size="25px" color="white" />,
-    cssName: "facebook",
-  },
-  {
-    name: "NodeJS",
-    icon: <DiNodejs size="25px" color="white" />,
-    cssName: "java-script",
-  },
+  { name: "NodeJS", icon: <DiNodejs size="48px" color="var(--primary-main)" /> },
   {
     name: "ExpressJS",
-    icon: <SiExpress size="25px" color="white" />,
-    cssName: "gmail",
+    icon: <SiExpress size="48px" color="var(--primary-main)" />,
   },
+  { name: "Django", icon: <DiDjango size="48px" color="var(--primary-main)" /> },
+  { name: "Material UI", icon: <SiMui size="48px" color="var(--primary-main)" /> },
+  { name: "Git", icon: <BsGit size="48px" color="var(--primary-main)" /> },
   {
-    name: "Django",
-    icon: <DiDjango size="25px" color="white" />,
-    cssName: "type-script",
+    name: "Bitbucket",
+    icon: <FaBitbucket size="48px" color="var(--primary-main)" />,
   },
-  {
-    name: "Git",
-    icon: <BsGit size="25px" color="white" />,
-    cssName: "git",
-  },
-  {
-    name: "Bitbucket DevOps",
-    icon: <FaBitbucket size="25px" color="white" />,
-    cssName: "recoil",
-  },
-  {
-    name: "Jira",
-    icon: <FaJira size="25px" color="white" />,
-    cssName: "react-query",
-  },
-  {
-    name: "RESTful APIs",
-    icon: <TbApi size="25px" color="white" />,
-    cssName: "react",
-  },
+  { name: "Jira", icon: <FaJira size="48px" color="var(--primary-main)" /> },
+  { name: "REST APIs", icon: <TbApi size="48px" color="var(--primary-main)" /> },
+  { name: "HTML5", icon: <AiFillHtml5 size="48px" color="var(--primary-main)" /> },
+  { name: "CSS3", icon: <BiLogoCss3 size="48px" color="var(--primary-main)" /> },
 ];
 
 const projects = [
@@ -159,7 +181,7 @@ function App() {
           form.current,
           "BH4aS8vM7zKyYE1Kn"
         )
-        .then((result) => {
+        .then(() => {
           e.target.name.value = "";
           e.target.email.value = "";
           e.target.message.value = "";
@@ -194,7 +216,7 @@ function App() {
           <input id="checkbox" className={style["checkbox2"]} type="checkbox" />
           <label
             className={`${style.toggle} ${style.toggle2}`}
-            for="checkbox"
+            htmlFor="checkbox"
             onClick={() => setMenu(!menu)}
           >
             <div className={`${style.bars} ${style.bar4}`}></div>
@@ -224,7 +246,7 @@ function App() {
       <div id="Home" className={style.home}>
         <div className={style["home-content"]}>
           <img src={ProfilePic} alt="Profile" className={style.profilePic} />
-          <h1>HEY, I'M Shashank Nath</h1>
+          <h1>HEY, I&apos;M Shashank Nath</h1>
           <p>
             Highly adaptable Full Stack Developer with 2 years and 9 months of
             experience in React JS, Node.js, and Git. Proficient in end-to-end
@@ -232,14 +254,14 @@ function App() {
             consistently delivering efficient and scalable solutions that
             optimize system functionality and user experience.
           </p>
-          <a
-            href={cv}
-            download="cv-PDF-document"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <DownloadButton>Download CV</DownloadButton>
-          </a>
+          <div className={style["home-actions"]}>
+            <a href={cv} target="_blank" rel="noreferrer">
+              <DownloadButton>Preview CV</DownloadButton>
+            </a>
+            <a href={cv} download="Shashank-Nath-Resume.pdf">
+              <DownloadButton>Download CV</DownloadButton>
+            </a>
+          </div>
         </div>
         <div className={style["scroll-icon"]}>
           <div
@@ -256,6 +278,7 @@ function App() {
           <a
             className={style.github}
             target="_blank"
+            rel="noreferrer"
             href="https://github.com/shashankfeb16"
           >
             <AiFillGithub size="30px" color="black" />
@@ -263,6 +286,7 @@ function App() {
           <a
             className={style.linkedin}
             target="_blank"
+            rel="noreferrer"
             href="https://www.linkedin.com/in/shashank-nath-9b8970147/"
           >
             <AiFillLinkedin size="30px" color="black" />
@@ -270,6 +294,7 @@ function App() {
           <a
             className={style.gmail}
             target="_blank"
+            rel="noreferrer"
             href="mailto:shashankfeb16@gmail.com?subject=SendMail&body=Description"
           >
             <BiLogoGmail size="30px" color="black" />
@@ -296,7 +321,7 @@ function App() {
             <div className={style["about-info"]}>
               <h3>Get to know me!</h3>
               <p>
-                I'm a Highly adaptable Full Stack Developer with 2 years and 9
+                I&apos;m a Highly adaptable Full Stack Developer with 2 years and 9
                 months of experience. I am proficient in end-to-end web
                 application development, unit testing, and issue resolution,
                 consistently delivering efficient and scalable solutions that
@@ -309,18 +334,13 @@ function App() {
             </div>
             <div className={style["my-skill"]}>
               <h3>My Skills</h3>
-              <div className={style.skills}>
-                {skills.map((skill, index) => {
-                  return (
-                    <div
-                      key={`skill${index}`}
-                      className={`${style.skill} ${style[skill.cssName]}`}
-                    >
-                      <div className={style["skill-name"]}>{skill.name}</div>
-                      <div className={style["skill-icon"]}>{skill.icon}</div>
-                    </div>
-                  );
-                })}
+              <div className={style["skills-hero"]}>
+                {heroSkills.map((skill, index) => (
+                  <div key={`hero-skill-${index}`} className={style["skill-card"]}>
+                    <div className={style["skill-card-icon"]}>{skill.icon}</div>
+                    <div className={style["skill-card-name"]}>{skill.name}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -448,6 +468,7 @@ function App() {
                 <a
                   className={style.git}
                   target="_blank"
+                  rel="noreferrer"
                   href="https://github.com/shashankfeb16"
                 >
                   <AiFillGithub size="30px" color="white" />
@@ -455,6 +476,7 @@ function App() {
                 <a
                   className={style.linkedin}
                   target="_blank"
+                  rel="noreferrer"
                   href="https://www.linkedin.com/in/shashank-nath-9b8970147/"
                 >
                   <AiFillLinkedin size="30px" color="white" />
@@ -462,6 +484,7 @@ function App() {
                 <a
                   className={style.gmail}
                   target="_blank"
+                  rel="noreferrer"
                   href="mailto:shashankfeb16@gmail.com?subject=SendMail&body=Description"
                 >
                   <BiLogoGmail size="30px" color="white" />
