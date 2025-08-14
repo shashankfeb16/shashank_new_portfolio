@@ -278,11 +278,11 @@ function App() {
           </p>
           <div className={style["home-actions"]}>
             <a href={cv} target="_blank" rel="noreferrer">
-              <DownloadButton>Preview CV</DownloadButton>
+              <DownloadButton>View CV</DownloadButton>
             </a>
-            <a href={cv} download="Shashank-Nath-Resume.pdf">
+            {/* <a href={cv} download="Shashank-Nath-Resume.pdf">
               <DownloadButton>Download CV</DownloadButton>
-            </a>
+            </a> */}
           </div>
         </div>
         <div className={style["scroll-icon"]}>
