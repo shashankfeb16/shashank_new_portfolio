@@ -212,6 +212,19 @@ function App() {
     }, 2000);
   };
 
+  const handleCVAction = () => {
+    // Open in new tab
+    window.open(cv, "_blank");
+
+    // Trigger download
+    const link = document.createElement("a");
+    link.href = cv;
+    link.download = "Shashank-Nath-Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className={style.app}>
       {/* Navbar */}
@@ -277,9 +290,12 @@ function App() {
             optimize system functionality and user experience.
           </p>
           <div className={style["home-actions"]}>
-            <a href={cv} target="_blank" rel="noreferrer">
-              <DownloadButton>View CV</DownloadButton>
-            </a>
+            {/* <a href={cv} target="_blank" rel="noreferrer">
+              <DownloadButton onClick={handleCVAction}>View CV</DownloadButton>
+            </a> */}
+            <DownloadButton onClick={handleCVAction}>
+              View & Download CV
+            </DownloadButton>
             {/* <a href={cv} download="Shashank-Nath-Resume.pdf">
               <DownloadButton>Download CV</DownloadButton>
             </a> */}
